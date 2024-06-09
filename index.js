@@ -6,7 +6,7 @@ import mongoose from "mongoose";
 
 // import routes
 import studentRouter from "./route/StudentRoute.js";
-import bookRouter from "./route/BookRoute.js";
+import libraryRouter from "./route/LibraryRoute.js";
 
 // menggunakan dependencies
 config();
@@ -16,7 +16,7 @@ app.use(
   express.urlencoded({ extended: false }),
   cors(),
   studentRouter,
-  bookRouter
+  libraryRouter
 );
 
 // koneksi ke database mongodb
