@@ -14,11 +14,11 @@ import express from "express";
 const libraryRouter = express.Router();
 
 // tentukan rute
-libraryRouter.get("/api/Librarys", getLibrary);
-libraryRouter.get("/api/Librarys/id/:id", getLibraryById);
-libraryRouter.post("/api/Librarys", addLibrary);
-libraryRouter.patch("/api/Librarys/id/:id", updLibrary);
-libraryRouter.delete("/api/Librarys/id/:id", delLibrary);
+libraryRouter.get("/api/libraries", getLibrary);
+libraryRouter.get("/api/libraries/id/:id", getLibraryById);
+libraryRouter.post("/api/libraries", addLibrary);
+libraryRouter.patch("/api/libraries/id/:id", updLibrary);
+libraryRouter.delete("/api/libraries/id/:id", delLibrary);
 
 // export router
 export default libraryRouter;
