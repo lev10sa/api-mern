@@ -4,8 +4,8 @@ import Library from "../model/LibraryModel.js";
 // tampilkan semua data siswa
 export const getLibrary = async (req, res) => {
   try {
-    const Librarys = await Library.find();
-    res.status(200).json(Librarys);
+    const libs = await Library.find();
+    res.status(200).json(libs);
   } catch (error) {
     res.status(500);
     console.log(error.message);
@@ -15,8 +15,8 @@ export const getLibrary = async (req, res) => {
 // tampilkan data siswa berdasarkan id
 export const getLibraryById = async (req, res) => {
   try {
-    const Library = await Library.findById(req.params.id);
-    res.status(200).json(Library);
+    const lib = await Library.findById(req.params.id);
+    res.status(200).json(lib);
   } catch (error) {
     res.status(500);
     console.log(error.message);
@@ -26,8 +26,8 @@ export const getLibraryById = async (req, res) => {
 // menambah data siswa
 export const addLibrary = async (req, res) => {
   try {
-    const Library = new Library(req.body);
-    const saved = await Library.save();
+    const lib = new Library(req.body);
+    const saved = await lib.save();
     res.status(200).json(saved);
   } catch (error) {
     res.status(500);
@@ -38,11 +38,11 @@ export const addLibrary = async (req, res) => {
 // update data siswa
 export const updLibrary = async (req, res) => {
   try {
-    const Library = await Library.findByIdAndUpdate(
+    const lib = await Library.findByIdAndUpdate(
       { _id: req.params.id },
       { $set: req.body }
     );
-    res.status(200).json(Library);
+    res.status(200).json(lib);
   } catch (error) {
     res.status(500);
     console.log(error.message);
@@ -52,8 +52,8 @@ export const updLibrary = async (req, res) => {
 // menghapus data siswa
 export const delLibrary = async (req, res) => {
   try {
-    const Library = await Library.findByIdAndDelete(req.params.id);
-    res.status(200).json(Library);
+    const lib = await Library.findByIdAndDelete(req.params.id);
+    res.status(200).json(lib);
   } catch (error) {
     res.status(500);
     console.log(error.message);
