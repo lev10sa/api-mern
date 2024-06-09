@@ -1,0 +1,33 @@
+### GET ALL DATA
+GET http://localhost:5000/api/students
+Content-Type: application/json
+
+### GET DATA BY ID
+GET http://localhost:5000/api/students/id/66377676e162a139b78980a4
+Content-Type: application/json
+
+### ADD DATA
+POST http://localhost:5000/api/students
+Content-Type: application/json
+
+{
+    "name": "Alfiandi",
+    "class": "XII E",
+    "birthday": "27/08/2000",
+    "gender": "Laki-laki"
+}
+
+### EDIT DATA
+PATCH http://localhost:5000/api/students/id/663f3fc3d0f0f2b02c9e0cb8
+Content-Type: application/json
+
+{
+    "name": "Alfiandi",
+    "class": "XII PPLG",
+    "birthday": "27/08/2000",
+    "gender": "LAKI-LAKI"
+}
+
+### DELETE DATA
+DELETE http://localhost:5000/api/students/id/663f3fc3d0f0f2b02c9e0cb8
+Content-Type: application/json
