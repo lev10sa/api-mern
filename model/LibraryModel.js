@@ -2,7 +2,7 @@
 import mongoose from "mongoose";
 
 // struktur tabel
-const bookSchema = mongoose.Schema(
+const librarySchema = mongoose.Schema(
   {
     name: {
       type: String,
@@ -16,6 +16,12 @@ const bookSchema = mongoose.Schema(
     price: {
       type: String,
     },
+    borrower: {
+      type: String,
+    },
+    duration: {
+      type: String,
+    },
   },
   {
     timestamps: true,
@@ -23,4 +29,4 @@ const bookSchema = mongoose.Schema(
 );
 
 // export schema db
-export default mongoose.model("Book", bookSchema);
+export default mongoose.model("Library", librarySchema);
